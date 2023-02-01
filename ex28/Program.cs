@@ -17,6 +17,7 @@ public class Ex_28_Yamashita
                 break;
 
         }
+
         Console.WriteLine("表面積 = " + triangularPrism.GetSurface());
         Console.WriteLine("体積 = " + triangularPrism.GetVolume());
     }
