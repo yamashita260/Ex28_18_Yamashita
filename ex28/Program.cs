@@ -30,7 +30,6 @@ public class Ex_28_Yamashita
             if(float.TryParse(Console.ReadLine(), out input))
             {
                 return input;
-                Console.WriteLine("エラー");
             }
         }
     }
@@ -53,27 +52,27 @@ public class Ex_28_Yamashita
 
 class TriangularPrism
 {
-    float SideA, SideB, SideC, Tri_Hight, Height;
+    float Bottom1, Bottom2, Bottom3, BottomHeight, Height;
     float bottom, side;
-    public TriangularPrism(float sideA, float sideB, float sideC, float height)
+    public TriangularPrism(float bottom1, float bottom2, float bottom3, float height)
     {
-        this.SideA= sideA;
-        this.SideB= sideB;
-        this.SideC= sideC;
+        this.Bottom1= bottom1;
+        this.Bottom2= bottom2;
+        this.Bottom3= bottom3;
         this.Height= height;
 
-        float Bottom = (sideA + sideB + sideC) / 2.0f;
-        bottom = MathF.Sqrt(Bottom * (Bottom - SideA) * (Bottom - sideB) * (Bottom - sideC));
-        side = (sideA + sideB + sideC) * height;
+        float Bottom = (bottom1 + bottom2 + bottom3) / 2.0f;
+        bottom = MathF.Sqrt(Bottom * (Bottom - bottom1) * (Bottom - bottom2) * (Bottom - bottom3));
+        side = (bottom1 + bottom2 + bottom3) * height;
     }
 
-    public TriangularPrism(float sideA, float height, float tri_height)
+    public TriangularPrism(float bottom1, float height, float bottomHeight)
     {
-        this.SideA= sideA;
-        this.Tri_Hight= tri_height;
+        this.Bottom1= bottom1;
+        this.BottomHeight= bottomHeight;
         this.Height= height;
-        bottom = this.SideA * Tri_Hight / 2.0f;
-        side = (float)(sideA + tri_height + Math.Sqrt(sideA * sideA + tri_height * tri_height)) * height;
+        bottom = this.Bottom1 * this.BottomHeight / 2.0f;
+        side = (float)(bottom1 + bottomHeight + Math.Sqrt(bottom1 * bottom1 + bottomHeight * bottomHeight)) * height;
     }
     public double GetSurface()
     {
